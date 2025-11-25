@@ -1,13 +1,47 @@
 # $\LaTeX$ 记录
 # 1 导言区
+首先定义类型 `\documentclass{}`。
 ```latex
 \documentclass{article}
-\usepackage{packageto}
 ```
 ## 1.1 中文显示
 ```latex
-\usepackage{ctex}
+\usepackage{ctex} % 中文显示
 ```
+
+## 1.2 颜色
+```latex
+\usepackage{xcolor} % 颜色
+```
+
+## 1.3 图
+```latex
+\usepackage{graphicx} % 添加图片
+\usepackage{tikz} % 绘制矢量图
+\usepackage{subcaption} % 子图
+```
+
+## 1.4 表格
+```latex
+\usepackage{booktabs​} % 表格
+\usepackage{multirow​} % 多行，包括合并的表格
+```
+
+## 1.5 数学公式
+```latex
+\usepackage{amsmath} % 数学公式
+\usepackage{amssymb} % 数学符号
+\usepackage{amsfonts} % 数学字体
+\usepackage{bm} % 粗体
+\usepackage{algorithm2e} % 算法显示
+```
+
+## 1.6 超链接
+一般放在最后。
+```latex
+\usepackage[colorlinks, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} % 链接为蓝色
+```
+
 # 2 内容
 ```latex
 \begin{document}
@@ -42,18 +76,6 @@
 采用 `\maketitle` 语句。
 ```latex
 \maketitle
-```
-
-### 2.1.5 汇总
-```latex
-\documentclass{article}
-\usepackage{ctex}
-\begin{document}
-\title{Title is Here}
-\author{Author is Here}
-\date{\today}
-\maketitle
-\end{document}
 ```
 
 ## 2.2 正文
@@ -163,6 +185,14 @@ f(x) &= (x+1)^2 \\
 - **强制换行**​ 使用 `\\` 或 `\newline`（在表格、公式等环境中常用，正文中尽量避免）。
 - **禁止换行**​ 使用波浪号 `~`，例如 `Prof.~Smith` 可以防止 `"Prof."` 和 `"Smith"` 被分在两行。
 
+### 2.2.10 颜色
+```latex
+\textcolor{red}{这段文字是红色的}
+{\color{blue} 这段文字是蓝色的}
+\colorbox{yellow}{这个文本有黄色背景}
+\fcolorbox{red}{white}{这个文本有红色边框和白色背景}
+```
+
 ## 2.3 参考文献
 ### 2.3.1 注意事项
 - **使用** `BibTeX` 或更现代的 `BibLaTeX`。
@@ -187,9 +217,5 @@ f(x) &= (x+1)^2 \\
 ```latex
 \bibliography{references} % 使用传统 BibTeX
 \bibliographystyle{plain}       % 基本数字编号
-\bibliographystyle{unsrt}       % 按引用顺序编号
-\bibliographystyle{alpha}       % 用作者缩写和年份作为标签，如 [Ein05]
-\bibliographystyle{abbrv}       % 缩写样式
-\bibliographystyle{plainnat}    % 或 apacite, etc.
 ```
 

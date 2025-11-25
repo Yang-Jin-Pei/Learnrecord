@@ -1,0 +1,120 @@
+\documentclass{article}
+% ================================中文支持===============================
+\usepackage{ctex} % 中文支持
+% ================================颜色支持===============================
+\usepackage{xcolor} % 颜色
+% ================================图与表格===============================
+\usepackage{graphicx} % 添加图片
+\usepackage{tikz} % 绘制矢量图
+\usepackage{subcaption} % 子图
+\usepackage{booktabs} % 表格
+\usepackage{multirow} % 多行，包括合并的表格
+% ================================数学公式===============================
+\usepackage{amsmath} % 数学公式
+\usepackage{amssymb} % 数学符号
+\usepackage{amsfonts} % 数学字体
+\usepackage{bm} % 粗体
+\usepackage{algorithm2e} % 算法显示
+% ================================超链接===============================
+\usepackage[colorlinks, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} % 链接为蓝色
+% ================================其他===============================
+
+\title{VSCode with LaTeX}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+%
+\%
+
+\section{一级标题}           % 用于 article
+\subsection{二级标题}
+\subsubsection{三级标题}
+% \chapter{章}                % 用于 report 和 book
+
+
+\textbf{粗体文本}
+\textit{斜体文本}
+\underline{下划线}
+
+{\Large 大号字体}  % 相对大小命令：\tiny, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+
+\begin{center}
+这是居中的文本。
+\end{center}
+
+% 无序列表
+\begin{itemize}
+  \item 第一项
+  \item 第二项
+        \begin{itemize}
+          \item 子项一
+          \item 子项二
+        \end{itemize}
+\end{itemize}
+
+% 有序列表
+\begin{enumerate}
+  \item 第一步
+  \item 第二步
+\end{enumerate}
+
+行内公式：勾股定理 $a^2 + b^2 = c^2$ 非常著名。
+
+行间公式（带编号）：
+\begin{equation}
+E = mc^2
+\label{eq:emc2} % 用于交叉引用
+\end{equation}
+
+多行对齐公式（不带编号）：
+\[
+\begin{aligned}
+f(x) &= (x+1)^2 \\
+     &= x^2 + 2x + 1
+\end{aligned}
+\]
+
+\begin{figure}[htbp] % h: here, t: top, b: bottom, p: page
+  \centering
+  \includegraphics[width=0.8\textwidth]{example-image.png} % 宽度设为文本宽度的80%
+  \caption{图片的标题}
+  \label{fig:my_image} % 用于交叉引用
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{表格标题}
+  \begin{tabular}{|l|c|r|} % l: 左对齐, c: 居中, r: 右对齐, | 表示竖线
+    \hline
+    姓名 & 分数 & 等级 \\ \hline %\hline表示横线
+    张三 & 95 & A \\ \hline
+    李四 & 87 & B+ \\ \hline
+  \end{tabular}
+  \label{tab:score}
+\end{table}
+
+如第\ref{sec:intro}节中图\ref{fig:arch}所示，公式(\ref{eq:main})是核心。
+\%，\$，\&，\_
+\textcolor{red}{这段文字是红色的}
+{\color{blue} 这段文字是蓝色的}
+\colorbox{yellow}{这个文本有黄色背景}
+\fcolorbox{red}{white}{这个文本有红色边框和白色背景}
+
+\cite{key}：生成一个数字标签，如 [1]。
+% \citeauthor{key}：只显示作者，如 Einstein。
+% \citeyear{key}：只显示年份，如 1905。
+% \citet{key}：生成 "作者 (年份)" 格式（需要 `natbib` 宏包），如 Einstein (1905)。
+% \citep{key}：生成 "(作者, 年份)" 格式（需要 `natbib` 宏包），如 (Einstein, 1905)。
+引用多个文献：用逗号分隔，如 \cite{paper1, book1}生成
+
+\bibliography{references}       % 使用传统 BibTeX
+\bibliographystyle{plain}       % 基本数字编号
+% \bibliographystyle{unsrt}       % 按引用顺序编号
+% \bibliographystyle{alpha}       % 用作者缩写和年份作为标签，如 [Ein05]
+% \bibliographystyle{abbrv}       % 缩写样式
+% \bibliographystyle{plainnat}    % 或 apacite, etc.
+\end{document}

@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{key}
+AAa.
+\newblock {\em 我的书籍}.
+\newblock 科学出版社, 2022.
+
+\bibitem{paper1}
+张三 and 李四.
+\newblock 我的第一篇论文.
+\newblock {\em 计算机学报}, 50:100--105, 2023.
+
+\bibitem{book1}
+王五.
+\newblock {\em 我的书籍}.
+\newblock 科学出版社, 2022.
+
+\end{thebibliography}
